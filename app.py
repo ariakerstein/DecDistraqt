@@ -1,6 +1,11 @@
 # # app.py
 # import os
 
+from flask import Flask, request, render_template
+
+app = Flask(__name__)
+
+
 # from flask import Flask
 # from micawber import bootstrap_basic
 # # from peewee import SqliteDatabase
@@ -36,6 +41,10 @@ def index():
 @app.route('/hello')
 def hello():
     return 'Hello World'
+
+@app.route('/base')
+def test():
+    return render_template('base.html')
 
 
 if __name__ == '__main__':
